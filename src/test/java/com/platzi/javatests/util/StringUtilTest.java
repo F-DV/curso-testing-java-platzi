@@ -26,4 +26,17 @@ public class StringUtilTest {
     public void repeat_string_negative_times(){
         Assert.assertEquals("",StringUtil.repeat("hola",-1));
     }
+
+    @Test
+    public void if_String_isEmpty(){
+        Assert.assertEquals(true,StringUtil.isEmpty(""));
+    }
+    @Test
+    public void if_String_has_tab(){
+        Assert.assertEquals(true,StringUtil.isEmpty(" "));
+    }
+    @Test
+    public void if_String_not_isEmpty(){
+        Assert.assertEquals(false,StringUtil.isEmpty("Hello"));
+    }
 }

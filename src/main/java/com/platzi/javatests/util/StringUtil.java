@@ -12,4 +12,9 @@ public class StringUtil {
         }
         return result;
     }
+
+    public static boolean isEmpty(String str){
+        System.out.println(str.trim());
+        return str == null || str.trim().length() <=0;
+    }
 }
