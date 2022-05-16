@@ -36,6 +36,10 @@ public class StringUtilTest {
         Assert.assertEquals(true,StringUtil.isEmpty(" "));
     }
     @Test
+    public void if_String_isNull(){
+        Assert.assertEquals(true,StringUtil.isEmpty(null));
+    }
+    @Test
     public void if_String_not_isEmpty(){
         Assert.assertEquals(false,StringUtil.isEmpty("Hello"));
     }
