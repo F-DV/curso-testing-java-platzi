@@ -62,6 +62,16 @@ public class MovieRepositoryIntegrationTest {
      * de datos
      * @throws Exception
      */
+    @Test
+    public void insert_a_movie(){
+        Movie movie = new Movie("super 8",112,Genre.THRILLER);  //Creamos la pelicula que vamos a guardar
+
+        movieRespository.saverOrUpdate(movie);                                  //Se guarda la pelicula creada anteriormente
+
+        Movie movieFromDb = movieRespository.findbyId(4);                       //Buscamos la pelicula que acabamos de ingresar
+
+        assertThat(movieFromDb,CoreMatchers.is(new Movie(4,"super 8",112,Genre.THRILLER)));                         //Testeamos que si devuelva la pelicula que ingreamos
+    }
 
     @After
     public void tearDown() throws Exception {

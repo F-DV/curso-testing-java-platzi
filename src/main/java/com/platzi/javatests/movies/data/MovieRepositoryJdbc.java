@@ -35,9 +35,15 @@ public class MovieRepositoryJdbc implements MovieRepository {
         return jdbcTemplate.query("SELECT * FROM movies",movieMapper);
     }
 
+    /**
+     * Guardamos peliculas en la base de datos
+     * @param movie
+     */
     @Override
     public void saverOrUpdate(Movie movie) {
 
+        jdbcTemplate.update("insert into movies (name,minutes,genre) values (?,?,?)",
+                movie.getName(),movie.getMinutes(),movie.getGenre().toString());
     }
     /*
         La dependencia de spring-jdbc nos permite utilizar RowMapper para ingresar a la base de datos
